@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Acerca de la empresa...</h1>
+<a class="btn btn-success" href="{% url 'create-product-view' %}">Agregar</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Activo</th>
+      <th scope="col">Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for product in products %}
+    <tr>
+      <th scope="row">{{ product.id }}</th>
+      <td>{{ product.name }}</td>
+      <td>{{ product.stock }}</td>
+      <td>{{ product.is_active }}</td>
+      <td>
+        <form method="post" action="{% url 'delete_product' product.pk %}"
+              style="display:inline;" onsubmit="return confirmDelete();">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger btn-sm">Eliminar</button>
+        </form>
+      </td>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+<script>
+function confirmDelete() {
+  return confirm('¿Seguro que quieres eliminar este producto?
+  Esta acción lo ocultará del listado.');
+}
+</script>
+{% endblock %}

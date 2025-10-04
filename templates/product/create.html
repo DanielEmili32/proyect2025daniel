@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post" action="{% url 'create-product-view' %}" >
+     {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleInputEmail1">Nombre Producto</label>
+    <input type="text" name="name_product" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Stock</label>
+    <input type="number" name="stock_product" class="form-control" id="exampleInputPassword1">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}

@@ -1,0 +1,27 @@
+ <link href="https://getbootstrap.com/docs/4.6/examples/floating-labels/floating-labels.css" rel="stylesheet">
+ <form class="form-signin" method="post" action="{% url 'login' %}">
+   {% csrf_token %}
+     <div class="text-center mb-4">
+    <img class="mb-4" src="/docs/4.6/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+    <h1 class="h3 mb-3 font-weight-normal">Floating labels</h1>
+    <p>Build form controls with floating labels via the <code>:placeholder-shown</code> pseudo-element. <a href="https://caniuse.com/css-placeholder-shown">Works in latest Chrome, Safari, Firefox, and IE 10/11 (prefixed).</a></p>
+  </div>
+
+  <div class="form-label-group">
+    <input type="text" name="username" id="inputEmail" class="form-control" placeholder="Nombre de usuario" required autofocus>
+    <label for="inputEmail">Usuario</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+    <label for="inputPassword">Password</label>
+  </div>
+
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+  <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2024</p>
+</form>

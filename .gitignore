@@ -1,0 +1,48 @@
+# ---- Django / Python ----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.log
+*.pot
+*.pyc
+
+# Base de datos local (SQLite)
+db.sqlite3
+
+# Archivos de migraciones (opcional, si no quieres versionarlos)
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+# Entorno virtual
+.venv/
+venv/
+env/
+# Archivos temporales / entornos
+.env
+*.env
+*.sqlite3
+*.sqlite
+
+# ---- Archivos estáticos y de medios ----
+/staticfiles/
+/media/
+
+# ---- IDEs / Editores ----
+# VSCode
+.vscode/
+# PyCharm / JetBrains
+.idea/
+
+# ---- Sistemas operativos ----
+.DS_Store
+Thumbs.db
+
+# ---- Docker / Virtualenv ----
+*.pid
+*.seed
+*.cover
+*.coverage
+*.py,co*
+CLAUDE.md
